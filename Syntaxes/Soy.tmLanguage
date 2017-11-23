@@ -235,21 +235,8 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>support.type.soy</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable.parameter.soy</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(@param|@param\?)\s+(\w+)</string>
+					<key>include</key>
+					<string>#template-param</string>
 				</dict>
 			</array>
 		</dict>
@@ -1158,6 +1145,10 @@
 					<key>include</key>
 					<string>#print-parameter</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#template-param</string>
+				</dict>
 			</array>
 		</dict>
 		<key>tag-simple</key>
@@ -1299,6 +1290,26 @@
 					<string>\b(autoescape)\s*(=)\s*('true'|'false'|'contextual')</string>
 				</dict>
 			</array>
+		</dict>
+		<key>template-param</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.type.soy</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.soy</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(@param|@param\?)\s+(\w+)</string>
+			<key>name</key>
+			<string>meta.tag.template.param.soy</string>
 		</dict>
 		<key>variable</key>
 		<dict>
